@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="ExpertForum.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    </asp:ContentPlaceHolder>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+    <style>
+        .dropdown-menu .sub-menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            padding: 10px;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <header>
+                <nav class="navbar navbar-default">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">
+                                    <img src="Images/home.png" height="20" width="20" /></a></li>
+                                <li class="dropdown" id="category">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Danh mục</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Category 1</a></li>
+                                        <li class="dropdown" id="subcategory">
+                                            <a href="#">Category 2
+                                                <img src="Images/right-arrow.png" height="10" width="10" /></a>
+                                            <ul class="sub-menu">
+                                                <li><a href="#">Subcategory 1</a></li>
+                                                <li><a href="#">Subcategory 2</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Theo dõi</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Số câu hỏi tồn đọng</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Báo cáo</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Thống kê đánh giá chuyên gia</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hệ thống</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Thay đổi thông tin cá nhân</a></li>
+                                        <li><% Response.Write(RenderRegisterExpertAccount()); %></li>
+                                    </ul>
+                                </li>
+                                <li><% Response.Write(RenderLoginLogoutLink()); %></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.dropdown').hover(function () {
+                $(this).find('.dropdown-menu').stop(true, true).slideDown();
+                $(this).find('.sub-menu').stop(true, true).slideDown();
+            }, function () {
+                $(this).find('.dropdown-menu').stop(true, true).slideUp();
+                $(this).find('.sub-menu').stop(true, true).slideUp();
+            });
+        });
+    </script>
+</body>
+</html>
