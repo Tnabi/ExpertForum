@@ -50,3 +50,47 @@ body {
 .subcategory {
     display: none;
 }
+
+input[type="text"], input[type=password], input[type="file"] {
+    padding: 6px 6px !important;
+    margin: 0;
+    border: 1px solid #E1E2E2;
+    background: #FFF;
+    outline: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+input[type="button"], input[type="submit"], button {
+    font-size: 1em;
+    /* font-weight: normal; */
+    padding: 6px 6px !important;
+    border: none;
+    background: #e0e0e0;
+    display: inline-block;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+
+.btmenu {
+    background-color: #d0d0d0 !important;
+    cursor: pointer;
+    height: 52px;
+    width: 100%;
+    font-size: 140% !important;
+}

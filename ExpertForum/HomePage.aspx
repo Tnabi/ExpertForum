@@ -24,14 +24,14 @@
             <div class="col-md-3 categories">
                 <h2>Danh sách lĩnh vực</h2>
                 <ul class="list-group" id="categories-list">
-                    <li class="list-group-item" id="category1">Category 1<img src="Images/arrow.png" height="15" width="15" />
+                    <li class="list-group-item" id="category1">Category 1<img src="~/Images/arrow.png" height="15" width="15" />
                         <ul class="list-group subcategory" style="display: none">
                             <li class="list-group-item">Subcategory A</li>
                             <li class="list-group-item">Subcategory B</li>
                             <li class="list-group-item">Subcategory C</li>
                         </ul>
                     </li>
-                    <li class="list-group-item" id="category2">Category 2<img src="Images/arrow.png" height="15" width="15" />
+                    <li class="list-group-item" id="category2">Category 2<img src="~/Images/arrow.png" height="15" width="15" />
                         <ul class="list-group subcategory" style="display: none">
                             <li class="list-group-item">Subcategory A</li>
                             <li class="list-group-item">Subcategory B</li>
