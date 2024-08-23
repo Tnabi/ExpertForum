@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="StaffRegister.aspx.cs" Inherits="ExpertForum.StaffRegister" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Main.Master" AutoEventWireup="true" CodeBehind="UserRegister.aspx.cs" Inherits="ExpertForum.Register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -6,7 +6,7 @@
     <div class="container">
         <div id="div_coban" style="padding: 6px; border: 1px solid #CCCCCC;" class="boxcorner">
             <div class="row" style="padding: 0; margin: 0">
-                <div class="col-md-6" style="padding: 0; margin: 0">
+                <div class="col-md-6 mx-auto" style="padding: 0; margin: 0">
                     <table style="width: 100%;">
                         <tbody>
                             <tr>
@@ -16,21 +16,32 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Mã cán bộ</td>
-                                <td>
-                                    <input name="mcb" type="text" id="mcb" style="width: 120px;">
-                                </td>
-                            </tr>
-                            <tr>
                                 <td width="120px">Tài khoản đăng ký</td>
                                 <td colspan="4">
-                                    <input name="taikhoan" type="text" id="taikhoan" style="font-weight: bold; width: 100%;">
-                                </td>
+                                    <asp:TextBox runat="server" name="taikhoan" type="text" ID="taikhoan" Style="font-weight: bold; width: 100%;"></asp:TextBox>
                             </tr>
-                            <tr>
+                            <tr id="matkhau" runat="server">
                                 <td>Mật khẩu</td>
                                 <td>
-                                    <input name="password" type="text" id="txt_password" style="width: 100%;">
+                                    <asp:TextBox runat="server" name="password" type="text" id="txt_password" style="width: 100%;"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr id="matkhaucu" runat="server" visible="false">
+                                <td>Mật khẩu hiện tại</td>
+                                <td>
+                                    <asp:TextBox runat="server" name="password" type="text" id="txt_password_curr" style="width: 100%;"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr id="matkhaumoi" runat="server" visible="false">
+                                <td>Mật khẩu mới</td>
+                                <td>
+                                    <asp:TextBox runat="server" name="password" type="text" id="txt_password_new" style="width: 100%;"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr id="matkhauxacnhan" runat="server" visible="false">
+                                <td>Xác nhận m.khẩu</td>
+                                <td>
+                                    <asp:TextBox runat="server" name="password" type="text" id="txt_password_confirm" style="width: 100%;"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>

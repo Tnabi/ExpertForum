@@ -41,15 +41,15 @@
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="nav navbar-nav">
-                                <li><a href="#">
-                                    <img src="Images/home.png" height="20" width="20" /></a></li>
+                                <li><a href="HomePage.aspx">
+                                    <img src="../Images/home.png" height="20" width="20" /></a></li>
                                 <li class="dropdown" id="category">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Danh mục</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Category 1</a></li>
                                         <li class="dropdown" id="subcategory">
                                             <a href="#">Category 2
-                                                <img src="Images/right-arrow.png" height="10" width="10" /></a>
+                                                <img src="../Images/right-arrow.png" height="10" width="10" /></a>
                                             <ul class="sub-menu">
                                                 <li><a href="#">Subcategory 1</a></li>
                                                 <li><a href="#">Subcategory 2</a></li>
@@ -70,15 +70,16 @@
                                 </li>
                                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hệ thống</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Thay đổi thông tin cá nhân</a></li>
+                                        <li><a href="UserRegister.aspx?edit=true">Thay đổi thông tin cá nhân</a></li>
 
                                         <%-- Đây là chức năng chỉ admin có --%>
                                         <li><a href="StaffRegister.aspx">Đăng ký tài khoản cán bộ</a></li>
-                                        <li><a href="AdminFunc/SpecialtyManagement.aspx">Quản lý danh sách lĩnh vực</a></li>
+                                        <li><a href="SpecialtyManagement.aspx">Quản lý danh sách lĩnh vực</a></li>
 
                                         <%-- Đây là chức năng chỉ có cán bộ có --%>
                                         <li><a href="ExpertRegister.aspx">Đăng ký tài khoản chuyên gia</a></li>
                                         <li><% Response.Write(RenderRegisterExpertAccount()); %></li>
+                                        <li><a href="ExpertManagement.aspx">Quản lý danh sách chuyên gia</a></li>
                                     </ul>
                                 </li>
                                 <li><% Response.Write(RenderLoginLogoutLink()); %></li>

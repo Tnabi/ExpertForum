@@ -21,11 +21,11 @@ namespace ExpertForum
         {
             if (IsLoggedIn())
             {
-                return "<a href='~/Logout.aspx'><img src=\"~/Images/exit.png\" height=\"20\" width=\"20\" />Đăng xuất</a>";
+                return "<a href='Logout.aspx'><img src=\"../Images/exit.png\" height=\"20\" width=\"20\" />Đăng xuất</a>";
             }
             else
             {
-                return "<a href='~/Login.aspx'><img src=\"~/Images/login.png\" height=\"20\" width=\"20\" />Đăng nhập</a>";
+                return "<a href='Login.aspx'><img src=\"../Images/login.png\" height=\"20\" width=\"20\" />Đăng nhập</a>";
             }
         }
 

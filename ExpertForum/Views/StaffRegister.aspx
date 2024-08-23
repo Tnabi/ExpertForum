@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="UserRegister.aspx.cs" Inherits="ExpertForum.Register" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Main.Master" AutoEventWireup="true" CodeBehind="StaffRegister.aspx.cs" Inherits="ExpertForum.StaffRegister" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -13,6 +13,12 @@
                                 <td width="120px">Họ tên</td>
                                 <td colspan="4">
                                     <input name="hoten" type="text" id="hoten" style="font-weight: bold; width: 100%;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Mã cán bộ</td>
+                                <td>
+                                    <input name="mcb" type="text" id="mcb" style="width: 120px;">
                                 </td>
                             </tr>
                             <tr>

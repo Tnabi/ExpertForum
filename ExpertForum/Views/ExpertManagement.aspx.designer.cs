@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ExpertForum
+namespace ExpertForum.Views
 {
 
 
-    public partial class Register
+    public partial class ExpertManagement
     {
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="ExpertForum.login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Main.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="ExpertForum.login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -7,7 +7,7 @@
         <div class="row">
             <div id="col1" class="col-md-5" style="background-color: #f0f0f0;" align="center">
                 <div style="margin-top: 30px">
-                    <img src="Images/cfrc.png" style="width: 50%">
+                    <img src="../Images/cfrc.png" style="width: 50%">
                 </div>
                 <div style="margin-top: 30px">
                     <h2>Đăng nhập</h2>
@@ -24,15 +24,15 @@
                 </div>
                 <hr />
                 <div>
-                    <a href="Register.aspx">
-                        <p><i>Đăng ký tài khoản cho người dùng<img src="Images/Double-right.png" width="15"/></i></p>
+                    <a href="UserRegister.aspx">
+                        <p><i>Đăng ký tài khoản cho người dùng<img src="../Images/Double-right.png" width="15"/></i></p>
                     </a>
                 </div>
                 <br />
                 <div>
                     <a href="HomePage.aspx">
                         <p>
-                            <i><img src="Images/Double-left.png" width="15"/>Quay lại trang chủ</i>
+                            <i><img src="../Images/Double-left.png" width="15"/>Quay lại trang chủ</i>
                         </p>
                     </a>
                 </div>
