@@ -43,22 +43,22 @@
                             </tr>
 
                             <tr>
-                                <td scope="row">Bùi Tuấn Anh</td>
+                                <td scope="row">A</td>
                                 <td>Nam</td>
-                                <td>2000</td>
-                                <td>2024-01-01</td>
-                                <td>Vay vốn</td>
+                                <td>1990</td>
+                                <td>2024-01-03</td>
+                                <td>Tài chính</td>
                                 <td>
                                     <button class="btn btn-warning" type="button" name="btn_edit" data-toggle="modal" data-target="#registerModal">Chỉnh sửa</button>
                                     <button class="btn btn-danger" type="button" name="btn_delete" onclick="">Xóa</button>
                                 </td>
                             </tr>
                             <tr>
-                                <td scope="row">Bùi Tuấn Anh</td>
-                                <td>Nam</td>
-                                <td>2000</td>
-                                <td>2024-01-01</td>
-                                <td>Vay vốn</td>
+                                <td scope="row">B</td>
+                                <td>Nữ</td>
+                                <td>1999</td>
+                                <td>2024-02-09</td>
+                                <td>Hôn nhân</td>
                                 <td>
                                     <button class="btn btn-warning" type="button" name="btn_edit" data-toggle="modal" data-target="#registerModal">Chỉnh sửa</button>
                                     <button class="btn btn-danger" type="button" name="btn_delete" onclick="">Xóa</button>
@@ -74,37 +74,38 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content col-md-12 mx-auto">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="addModalLabel">Thêm lĩnh vực mới</h5>
+                            <h2 class="modal-title" id="addModalLabel">Thêm chuyên gia</h2>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="spec_name">Tên chuyên môn:</label>
-                                <input type="text" class="form-control" id="spec_name_1" name="spec_name">
+                                <label for="name">Họ tên:</label>
+                                <input type="text" class="form-control" id="name_1" name="name">
                             </div>
                             <div class="form-group">
-                                <label for="spec_main">Thuộc nhánh (Không bắt buộc chọn):</label>
-                                <select class="form-select form-select-lg mb-3" aria-label="Large select" style="z-index: 1; width: 30%;">
-                                    <option value="" selected></option>
-                                    <option value="01" text="Tài chính"></option>
-                                    <option value="02" text="Hôn nhân"></option>
-                                </select>
+                                <label for="gender">Giới tính:</label>
+                                <asp:RadioButtonList runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
+                                    <asp:ListItem Value="01">Nam</asp:ListItem>
+                                    <asp:ListItem Value="02">Nữ</asp:ListItem>
+                                </asp:RadioButtonList>
+
                             </div>
                             <div class="form-group">
-                                <label for="password">Danh sách chuyên gia của lĩnh vực:</label>
+                                <label for="birthday">Ngày sinh:</label>
+                                <asp:TextBox ID="birthday" runat="server" TextMode="Date"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Danh sách chuyên môn:</label>
                                 <select class="form-select" multiple aria-label="Multiple select" style="height: 20%; z-index: 1; width: 90%; overflow-y: auto;">
-                                    <option value="01">Bùi Tuấn Anh</option>
+                                    <option value="01">Tài chính</option>
                                 </select>
                                 <button id="btn_remove_expert_1" style="display: block">Xóa</button>
                             </div>
                             <div class="form-group">
-                                <label for="spec_list">Danh sách các chuyên gia trong hệ thống:</label>
+                                <label for="spec_list">Danh sách các chuyên môn trong hệ thống:</label>
                                 <select class="form-select" multiple aria-label="Multiple select" style="height: 40%; z-index: 1; width: 90%; overflow-y: auto;">
-                                    <option value="01">Bùi Tuấn Anh</option>
-                                    <option value="02">Nguyễn Văn A</option>
-                                    <option value="03">Nguyễn Văn B</option>
-                                    <option value="04">Nguyễn C</option>
-                                    <option value="05">Nguyễn E</option>
-                                    <option value="06">Nguyễn D</option>
+                                    <option value="01">Tài chính</option>
+                                    <option value="02">Vay vốn</option>
+                                    <option value="03">Hôn nhân</option>
                                 </select>
                                 <button id="btn_add_expert_1" style="display: block">Thêm</button>
                             </div>
@@ -122,29 +123,35 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content col-md-12 mx-auto">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="registerModalLabel">Chỉnh sửa lĩnh vực</h5>
+                            <h2 class="modal-title" id="registerModalLabel">Chỉnh sửa thông tin chuyên gia</h2>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="spec_name">Tên chuyên môn:</label>
-                                <input type="text" class="form-control" id="spec_name" name="spec_name">
+                                <label for="name">Họ tên:</label>
+                                <input type="text" class="form-control" id="name" name="name" readonly value="A">
                             </div>
                             <div class="form-group">
-                                <label for="password">Danh sách chuyên gia của lĩnh vực:</label>
+                                <label for="gender">Giới tính:</label>
+                               <input type="text" class="form-control" id="gender" name="gender" readonly value="Nam">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="birthday">Ngày sinh:</label>
+                                <input name="ngaysinh" type="text" value="20/01/2000" id="ngaysinh" class="DATE" style="width:120px;" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Danh sách chuyên môn:</label>
                                 <select class="form-select" multiple aria-label="Multiple select" style="height: 20%; z-index: 1; width: 90%; overflow-y: auto;">
-                                    <option value="01">Bùi Tuấn Anh</option>
+                                    <option value="01">Tài chính</option>
                                 </select>
                                 <button id="btn_remove_expert" style="display: block">Xóa</button>
                             </div>
                             <div class="form-group">
-                                <label for="spec_list">Danh sách các chuyên gia trong hệ thống:</label>
+                                <label for="spec_list">Danh sách các chuyên môn trong hệ thống:</label>
                                 <select class="form-select" multiple aria-label="Multiple select" style="height: 40%; z-index: 1; width: 90%; overflow-y: auto;">
-                                    <option value="01">Bùi Tuấn Anh</option>
-                                    <option value="02">Nguyễn Văn A</option>
-                                    <option value="03">Nguyễn Văn B</option>
-                                    <option value="04">Nguyễn C</option>
-                                    <option value="05">Nguyễn E</option>
-                                    <option value="06">Nguyễn D</option>
+                                    <option value="01">Tài chính</option>
+                                    <option value="02">Vay vốn</option>
+                                    <option value="03">Hôn nhân</option>
                                 </select>
                                 <button id="btn_add_expert" style="display: block">Thêm</button>
                             </div>

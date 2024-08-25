@@ -134,6 +134,7 @@
     <Content Include="Images\right-arrow.png" />
     <Content Include="Views\login.aspx" />
     <Content Include="Views\StaffRegister.aspx" />
+    <Content Include="Views\Statistic.aspx" />
     <Content Include="Views\UserRegister.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -273,6 +274,13 @@
     </Compile>
     <Compile Include="Views\StaffRegister.aspx.designer.cs">
       <DependentUpon>StaffRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Statistic.aspx.cs">
+      <DependentUpon>Statistic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Statistic.aspx.designer.cs">
+      <DependentUpon>Statistic.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\UserRegister.aspx.cs">
       <DependentUpon>UserRegister.aspx</DependentUpon>
