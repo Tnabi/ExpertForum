@@ -100,7 +100,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Views\ExpertManagement.aspx" />
+    <Content Include="Views\QuestionAdd.aspx" />
+    <Content Include="Views\QuestionEstimate.aspx" />
     <Content Include="Views\SpecialtyManagement.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -135,6 +138,8 @@
     <Content Include="Views\login.aspx" />
     <Content Include="Views\StaffRegister.aspx" />
     <Content Include="Views\Statistic.aspx" />
+    <Content Include="Views\ThreadContent.aspx" />
+    <Content Include="Views\UnanswerQManagement.aspx" />
     <Content Include="Views\UserRegister.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -205,6 +210,20 @@
     </Compile>
     <Compile Include="Views\ExpertManagement.aspx.designer.cs">
       <DependentUpon>ExpertManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionAdd.aspx.cs">
+      <DependentUpon>QuestionAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionAdd.aspx.designer.cs">
+      <DependentUpon>QuestionAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionEstimate.aspx.cs">
+      <DependentUpon>QuestionEstimate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionEstimate.aspx.designer.cs">
+      <DependentUpon>QuestionEstimate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\SpecialtyManagement.aspx.cs">
       <DependentUpon>SpecialtyManagement.aspx</DependentUpon>
@@ -281,6 +300,20 @@
     </Compile>
     <Compile Include="Views\Statistic.aspx.designer.cs">
       <DependentUpon>Statistic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ThreadContent.aspx.cs">
+      <DependentUpon>ThreadContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ThreadContent.aspx.designer.cs">
+      <DependentUpon>ThreadContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UnanswerQManagement.aspx.cs">
+      <DependentUpon>UnanswerQManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UnanswerQManagement.aspx.designer.cs">
+      <DependentUpon>UnanswerQManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\UserRegister.aspx.cs">
       <DependentUpon>UserRegister.aspx</DependentUpon>

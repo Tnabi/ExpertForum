@@ -8,7 +8,7 @@
             <div class="col-md-9">
                 <h2>Các thảo luận gần nhất</h2>
                 <ul class="list-group post-list">
-                    <li class="list-group-item"><a href="#">Post 1</a>
+                    <li class="list-group-item"><a href="ThreadContent.aspx">Post 1</a>
                         <br />
                         Cái gì đó
                     </li>

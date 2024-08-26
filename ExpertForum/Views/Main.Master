@@ -11,7 +11,7 @@
         <title><%: Page.Title %> - My ASP.NET Application</title>
 
     </asp:ContentPlaceHolder>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/Site.css" rel="stylesheet" />
     <style>
         .dropdown-menu .sub-menu {
@@ -60,7 +60,7 @@
                                 </li>
                                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Theo dõi</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Số câu hỏi tồn đọng</a></li>
+                                        <li><a href="UnanswerQManagement.aspx">Số câu hỏi tồn đọng</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Báo cáo</a>
