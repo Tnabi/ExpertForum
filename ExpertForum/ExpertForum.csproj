@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Images\user.png" />
     <Content Include="Scripts\main.js" />
     <Content Include="Views\ExpertManagement.aspx" />
     <Content Include="Views\QuestionAdd.aspx" />

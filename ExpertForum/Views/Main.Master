@@ -31,7 +31,7 @@
         <div>
             <header>
                 <nav class="navbar navbar-default">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                                 <span class="icon-bar"></span>
@@ -39,53 +39,77 @@
                                 <span class="icon-bar"></span>
                             </button>
                         </div>
-                        <div class="collapse navbar-collapse" id="myNavbar">
-                            <ul class="nav navbar-nav">
-                                <li><a href="HomePage.aspx">
-                                    <img src="../Images/home.png" height="20" width="20" /></a></li>
-                                <li class="dropdown" id="category">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Danh mục</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Category 1</a></li>
-                                        <li class="dropdown" id="subcategory">
-                                            <a href="#">Category 2
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="collapse navbar-collapse" id="myNavbar">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="HomePage.aspx">
+                                            <img src="../Images/home.png" height="20" width="20" /></a></li>
+                                        <li class="dropdown" id="category">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Danh mục</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Category 1</a></li>
+                                                <li class="dropdown" id="subcategory">
+                                                    <a href="#">Category 2
                                                 <img src="../Images/right-arrow.png" height="10" width="10" /></a>
-                                            <ul class="sub-menu">
-                                                <li><a href="#">Subcategory 1</a></li>
-                                                <li><a href="#">Subcategory 2</a></li>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="#">Subcategory 1</a></li>
+                                                        <li><a href="#">Subcategory 2</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#">Separated link</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Theo dõi</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="UnanswerQManagement.aspx">Số câu hỏi tồn đọng</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Báo cáo</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="Statistic.aspx">Thống kê đánh giá chuyên gia</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hệ thống</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="UserRegister.aspx?edit=true">Thay đổi thông tin cá nhân</a></li>
+                                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Theo dõi</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="UnanswerQManagement.aspx">Số câu hỏi tồn đọng</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Báo cáo</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="Statistic.aspx">Thống kê đánh giá chuyên gia</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hệ thống</a>
+                                            <ul class="dropdown-menu">
+                                                <%-- Đây là chức năng chỉ admin có --%>
+                                                <li><a href="StaffRegister.aspx">Đăng ký tài khoản cán bộ</a></li>
+                                                <li><a href="SpecialtyManagement.aspx">Quản lý danh sách lĩnh vực</a></li>
 
-                                        <%-- Đây là chức năng chỉ admin có --%>
-                                        <li><a href="StaffRegister.aspx">Đăng ký tài khoản cán bộ</a></li>
-                                        <li><a href="SpecialtyManagement.aspx">Quản lý danh sách lĩnh vực</a></li>
-
-                                        <%-- Đây là chức năng chỉ có cán bộ có --%>
-                                        <li><a href="ExpertRegister.aspx">Đăng ký tài khoản chuyên gia</a></li>
-                                        <li><% Response.Write(RenderRegisterExpertAccount()); %></li>
-                                        <li><a href="ExpertManagement.aspx">Quản lý danh sách chuyên gia</a></li>
+                                                <%-- Đây là chức năng chỉ có cán bộ có --%>
+                                                <li><a href="ExpertRegister.aspx">Đăng ký tài khoản chuyên gia</a></li>
+                                                <li><% Response.Write(RenderRegisterExpertAccount()); %></li>
+                                                <li><a href="ExpertManagement.aspx">Quản lý danh sách chuyên gia</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><% Response.Write(RenderLoginLogoutLink()); %></li>
                                     </ul>
-                                </li>
-                                <li><% Response.Write(RenderLoginLogoutLink()); %></li>
-                            </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="col-lg-8" style="margin-top: 10px">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">Tìm</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <img src="../Images/user.png" height="20" width="20" />
+                                            <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="UserRegister.aspx?edit=true">Thay đổi thông tin cá nhân</a></li>
+                                            <li><a href="#">Đổi mật khẩu</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li role="presentation"><a href="#">Messages <span class="badge">3</span></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
                 </nav>
             </header>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

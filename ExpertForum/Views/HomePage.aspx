@@ -12,13 +12,13 @@
                         <br />
                         Cái gì đó
                     </li>
-                    <li class="list-group-item"><a href="#">Post 2</a>
+                    <li class="list-group-item"><a href="ThreadContent.aspx">Post 2</a>
                         <br />
                         Cái gì đấy
                     </li>
-                    <li class="list-group-item"><a href="#">Post 3</a></li>
-                    <li class="list-group-item"><a href="#">Post 4</a></li>
-                    <li class="list-group-item"><a href="#">Post 5</a></li>
+                    <li class="list-group-item"><a href="ThreadContent.aspx">Post 3</a></li>
+                    <li class="list-group-item"><a href="ThreadContent.aspx">Post 4</a></li>
+                    <li class="list-group-item"><a href="ThreadContent.aspx">Post 5</a></li>
                 </ul>
             </div>
             <div class="col-md-3 categories">

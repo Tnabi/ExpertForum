@@ -292,110 +292,79 @@
     </style>
     <div class="container">
         <div class="row">
-            <div class="col-md-12 mx-auto">
+            <div class="col-md-9">
                 <div class="thworks">
                     <div class="discussion">
                         <div class="discussion-body">
                             <div class="thread">
                                 <div class="thread-header">
-                                    <div class="reliability-meter">
-                                        <div class="engagement-bar-height" style="background: linear-gradient(to right, red, red, red, lawngreen, lawngreen, lawngreen, lawngreen, lawngreen, lawngreen, lawngreen);"></div>
-                                    </div>
-
-                                    <div class="thread-info">
-                                        <div class="thread-author-image">
-                                            <img src="https://us-central1-tutor-738.cloudfunctions.net/profileImage?user=Ek9FvqZtAnUowXcnBLLgujPVr142" />
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h1>Tiêu đề</h1>
                                         </div>
-                                        <div class="thread-author-info">
-                                            <div class="thread-author">
-                                                <div class="thread-author-name">Sandeep Mishra</div>
-                                                <div class="dot-separator">&middot;</div>
-                                                <div class="thread-timestamp">8 days ago</div>
+                                        <div class="panel-body">
+                                            <div class="thread-info">
+                                                <div class="thread-control-dropdown"><i class="fa fa-ellipsis-h"></i></div>
+                                                <div class="thread-author-image">
+                                                    <img src="../Images/user.png" />
+                                                </div>
+                                                <div class="thread-author-info">
+                                                    <div class="thread-author">
+                                                        <div class="thread-author-name">Nguyễn A</div>
+                                                        <div class="dot-separator">&middot;</div>
+                                                        <div class="thread-domain-name">Chuyên gia</div>
+                                                    </div>
+                                                    <div class="thread-domain">
+                                                        <div class="thread-domain-icon"><i class="fa fa-globe"></i></div>
+                                                        <div class="thread-timestamp">8 days ago</div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="thread-domain">
-                                                <div class="thread-domain-icon"><i class="fa fa-globe"></i></div>
-                                                <div class="dot-separator">&middot;</div>
-                                                <div class="thread-domain-name">Mentor</div>
-                                            </div>
-                                        </div>
-                                        <div class="thread-control">
-                                            <div class="thread-control-dropdown"><i class="fa fa-ellipsis-h"></i></div>
+                                            Nội dung trả lời
                                         </div>
                                     </div>
                                 </div>
                                 <div class="thread-body">
-                                    <div class="thread-title">Adviser to Emirates With Ties to Trump Aides Is Cooperating With Special Counsel</div>
-                                    <div class="thread-content">
-                                        An adviser to the United Arab Emirates with ties to current and former aides to President Trump is cooperating with the special counsel, Robert S. Mueller III, and gave testimony last week to a grand jury, according to two people familiar with
-            the matter. Mr. Mueller appears to be examining the influence of foreign money on Mr. Trump’s political activities and has asked witnesses about the possibility that the adviser, George Nader, funneled money from the Emirates to the president’s
-            political efforts. It is illegal for foreign entities to contribute to campaigns or for Americans to knowingly accept foreign money for political races. Mr. Nader, a Lebanese-American businessman who advises Crown Prince Mohammed bin Zayed
-            Al-Nahyan, the effective ruler of the Emirates, also attended a January 2017 meeting in the Seychelles that Mr. Mueller’s investigators have examined.
-                                    </div>
-                                </div>
-                                <div class="thread-footer">
-                                    <div class="thread-article">
-                                        <div class="thread-create">
-                                            <div class="thread-editor"></div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
-
-                            <div class="article">
-                                <div class="article-body">
-                                    <div class="article-image">
-                                        <div class="thread-author-image">
-                                            <img src="https://us-central1-tutor-738.cloudfunctions.net/profileImage?user=Ek9FvqZtAnUowXcnBLLgujPVr142" /></div>
-                                    </div>
-                                    <div class="article-content">
-                                        <div class="article-author-info">
-                                            <div class="article-author">
-                                                <div class="article-author-name">Sandeep Mishra</div>
-                                                <div class="dot-separator">&middot;</div>
-                                                <div class="article-timestamp">8 days ago</div>
-                                            </div>
-                                        </div>
-                                        This is my first post in this group, Currently i am woking in production support Banking domain, I want to switch my job and looking for devlopment profile.I have updated my Cv in naukri but didnt get any oppertunity. Please help me and let me know if
-              there is any opening. i am waiting for your positive response.
-                                    </div>
-                                    <div class="article-control">
-                                        <div class="article-control">
-                                            <div class="article-control-dropdown"><i class="fa fa-ellipsis-h"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article-footer"></div>
-                            </div>
-
-                            <div class="article">
-                                <div class="article-body">
-                                    <div class="article-image">
-                                        <div class="thread-author-image">
-                                            <img src="https://us-central1-tutor-738.cloudfunctions.net/profileImage?user=Ek9FvqZtAnUowXcnBLLgujPVr142" /></div>
-                                    </div>
-                                    <div class="article-content">
-                                        <div class="article-author-info">
-                                            <div class="article-author">
-                                                <div class="article-author-name">Sandeep Mishra</div>
-                                                <div class="dot-separator">&middot;</div>
-                                                <div class="article-timestamp">8 days ago</div>
-                                            </div>
-                                        </div>
-                                        This is my first post in this group, Currently i am woking in production support Banking domain, I want to switch my job and looking for devlopment profile.I have updated my Cv in naukri but didnt get any oppertunity. Please help me and let me know if
-              there is any opening. i am waiting for your positive response.
-                                    </div>
-                                    <div class="article-control">
-                                        <div class="article-control">
-                                            <div class="article-control-dropdown"><i class="fa fa-ellipsis-h"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article-footer"></div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-3 categories">
+                <ul class="media-list">
+                    <li class="media">
+                        <div class="media-body">
+                            <h3 class="media-heading">Các vấn đề liên quan</h3>
+                            <!-- Nested media object -->
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xOTFiYWMwNmQxOSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE5MWJhYzA2ZDE5Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy4xNzMwMDQxNTAzOTA2MjUiIHk9IjM2LjUiPjY0eDY0PC90ZXh0PjwvZz48L2c+PC9zdmc+" data-holder-rendered="true">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Vấn đề 1</h4>
+                                    ...
+          
+                                </div>
+                            </div>
+                            <!-- Nested media object -->
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xOTFiYWMwNTkyMSB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE5MWJhYzA1OTIxIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy4xNzMwMDQxNTAzOTA2MjUiIHk9IjM2LjUiPjY0eDY0PC90ZXh0PjwvZz48L2c+PC9zdmc+" data-holder-rendered="true">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Vấn đề 2</h4>
+                                    ...
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </asp:Content>
