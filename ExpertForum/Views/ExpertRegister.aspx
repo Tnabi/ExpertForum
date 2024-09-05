@@ -31,9 +31,9 @@
                                 <td>Ngày sinh</td>
                                 <td>
                                     <input name="ngaysinh" type="text" id="ngaysinh" class="DATE" style="width: 120px;">
-                                </td>
-                                <td style="width: 32px">&nbsp;</td>
-                                <td style="padding-left: 6px;">Giới tính</td>
+                                </td></tr>
+                            <tr>
+                                <td>Giới tính</td>
                                 <td>
                                     <input id="phai" type="checkbox" name="phai"><label for="phai"> Nữ</label>
                                 </td>
@@ -43,8 +43,6 @@
                                 <td>
                                     <input name="tdhv" type="text" id="tdhv" style="width: 120px;">
                                 </td>
-                                <td style="width: 32px">&nbsp;</td>
-
                             </tr>
                         </tbody>
                     </table>
@@ -53,7 +51,7 @@
                     <table style="width: 100%;">
                         <tbody>
                             <tr>
-                                <td style="padding-left: 6px;">Chuyên môn</td>
+                                <td>Chuyên môn</td>
                                 <td>
                                     <select name="chuyenmon" id="chuyen mon" style="width: 100%;">
                                         <option selected="selected" value=""></option>
@@ -72,9 +70,14 @@
 
 
                             <tr>
-                                <td>Địa chỉ liên lạc&nbsp;</td>
+                                <td>Địa chỉ liên lạc</td>
                                 <td>
                                     <input name="dcll" type="text" id="dcll" style="color: #000099; width: 100%;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-primary">Đăng ký</button>
                                 </td>
                             </tr>
                         </tbody>

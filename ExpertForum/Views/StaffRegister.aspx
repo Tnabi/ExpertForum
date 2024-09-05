@@ -5,6 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div id="div_coban" style="padding: 6px; border: 1px solid #CCCCCC;" class="boxcorner">
+            <h1>Đăng ký tài khoản cán bộ</h1>
             <div class="row" style="padding: 0; margin: 0">
                 <div class="col-md-6" style="padding: 0; margin: 0">
                     <table style="width: 100%;">
@@ -38,8 +39,9 @@
                                 <td>
                                     <input name="ngaysinh" type="text" id="ngaysinh" class="DATE" style="width: 120px;">
                                 </td>
-                                <td style="width: 32px">&nbsp;</td>
-                                <td style="padding-left: 6px;">Giới tính</td>
+                            </tr>
+                            <tr>
+                                <td>Giới tính</td>
                                 <td>
                                     <input id="phai" type="checkbox" name="phai"><label for="phai"> Nữ</label>
                                 </td>
@@ -49,8 +51,9 @@
                                 <td>
                                     <input name="tdhv" type="text" id="tdhv" style="width: 120px;">
                                 </td>
-                                <td style="width: 32px">&nbsp;</td>
-                                <td style="padding-left: 6px;">Dân tộc</td>
+                            </tr>
+                            <tr>
+                                <td>Dân tộc</td>
                                 <td>
                                     <select name="dantoc" id="dantoc" style="width: 100%;">
                                         <option selected="selected" value=""></option>
@@ -230,12 +233,15 @@
                                     <input name="tel" type="text" maxlength="59" id="tel" style="width: 100%;">
                                 </td>
                             </tr>
-
-
                             <tr>
                                 <td>Địa chỉ liên lạc&nbsp;</td>
                                 <td>
                                     <input name="dcll" type="text" id="dcll" style="color: #000099; width: 100%;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-primary">Đăng ký</button>
                                 </td>
                             </tr>
                         </tbody>

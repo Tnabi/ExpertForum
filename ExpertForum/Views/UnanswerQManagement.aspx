@@ -3,62 +3,155 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid">
-        <div class="row">
-            <section class="col-md-9">
-                <style>
-                    #filters-table {
-                        width: 60%;
-                        float: left;
-                    }
+    <style>
+        #filters-table {
+            width: 60%;
+            float: left;
+            border-bottom: 1px solid #e6e6e6;
+            padding-bottom: 24px;
+        }
 
-                    fieldset#filters table {
-                        border-collapse: collapse;
-                    }
+        fieldset#filters table {
+            border-collapse: collapse;
+        }
 
-                    fieldset#filters tr.filter {
-                        height: 2.1em;
-                    }
+        fieldset#filters tr.filter {
+            height: 2.1em;
+        }
 
-                    table > tr {
-                        vertical-align: middle;
-                    }
+        table > tr {
+            vertical-align: middle;
+        }
 
-                    fieldset#filters td.field {
-                        width: 230px;
-                    }
+        fieldset#filters td.field {
+            width: 100px;
+        }
 
-                    fieldset#filters td.operator {
-                        width: 130px;
-                    }
+        fieldset#filters td.operator {
+            width: 130px;
+        }
 
-                    fieldset#filters table td {
-                        padding: 0;
-                        vertical-align: middle;
-                    }
+        fieldset#filters table td {
+            padding: 0;
+            vertical-align: middle;
+        }
 
-                    fieldset#filters td.values {
-                        white-space: nowrap;
-                    }
-                </style>
-                <h1>Danh sách câu hỏi tồn đọng</h1>
+        fieldset#filters td.values {
+            white-space: nowrap;
+        }
+
+        table.list, .table-list {
+            border: 1px solid #e4e4e4;
+            width: 100%;
+            margin-bottom: 4px;
+            border-radius: 3px;
+            border-spacing: 0;
+            overflow: hidden;
+        }
+
+        table {
+            display: table;
+            border-collapse: separate;
+            box-sizing: border-box;
+            text-indent: initial;
+            unicode-bidi: isolate;
+            border-spacing: 2px;
+            border-color: gray;
+        }
+
+        tr.issue {
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .hascontextmenu {
+            cursor: context-menu;
+        }
+
+        table.list:not(.odd-even) tbody tr:nth-child(odd), .odd, #issue-changesets div.changeset:nth-child(odd) {
+            background-color: #f6f7f8;
+        }
+
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            unicode-bidi: isolate;
+        }
+
+        thead {
+            display: table-header-group;
+            vertical-align: middle;
+            unicode-bidi: isolate;
+            border-color: inherit;
+        }
+
+        table.list th, .table-list-header {
+            background-color: #EEEEEE;
+            padding: 4px;
+            white-space: nowrap;
+            font-weight: bold;
+        }
+
+        th {
+            display: table-cell;
+            vertical-align: inherit;
+            font-weight: bold;
+            text-align: center;
+            unicode-bidi: isolate;
+        }
+
+        tr.issue td.subject, tr.issue td.parent-subject, tr.issue td.category, td.assigned_to, td.last_updated_by, tr.issue td.string, tr.issue td.text, tr.issue td.list, tr.issue td.relations, tr.issue td.parent {
+            white-space: normal;
+        }
+
+        table.list td.name, table.list td.description, table.list td.subject, table.list td.parent-subject, table.list td.comments, table.list td.roles, table.list td.attachments, table.list td.text, table.list td.short_description {
+            text-align: left;
+        }
+
+        table td {
+            padding: 2px;
+        }
+
+        table.list td {
+            text-align: center;
+            vertical-align: middle;
+            padding-right: 10px;
+        }
+    </style>
+    <div class="container">
+        <div class="row" style="padding: 6px; border: 1px solid #CCCCCC;">
+            <div class="col-6">
+                <h2>Danh sách câu hỏi</h2>
                 <table id="filters-table">
+                    <tr class="filter" id="tr_speciality_id">
+                        <td class="field">
+                            <input checked="checked" id="cb_speciality_id" name="f[]" value="speciality_id" type="checkbox"><label for="cb_speciality_id"> Lĩnh vực:</label></td>
+                        <td class="operator">
+                            <select id="operators_speciality_id" name="op[speciality_id]" style="">
+                                <option value="o">Pháp lý</option>
+                                <option value="=">Quản lý tài chính</option>
+                                <option value="!">Khởi nghiệp</option>
+                                <option value="ev">Hôn nhân</option>
+                            </select></td>
+                        <td class="values"><span style="display: none;">
+                            <select class="value" id="values_speciality_id_1" name="v[speciality_id][]" disabled="disabled">
+                            </select>
+                            <span class="toggle-multiselect icon-only icon-toggle-plus">&nbsp;</span></span></td>
+                    </tr>
                     <tr class="filter" id="tr_status_id">
                         <td class="field">
-                            <input checked="checked" id="cb_status_id" name="f[]" value="status_id" type="checkbox"><label for="cb_status_id"> Status</label></td>
+                            <input checked="checked" id="cb_status_id" name="f[]" value="status_id" type="checkbox"><label for="cb_status_id"> Trạng thái:</label></td>
                         <td class="operator">
                             <select id="operators_status_id" name="op[status_id]" style="">
-                                <option value="o">open</option>
-                                <option value="=">is</option>
-                                <option value="!">is not</option>
-                                <option value="ev">has been</option>
-                                <option value="!ev">has never been</option>
-                                <option value="cf">changed from</option>
-                                <option value="c">closed</option>
-                                <option value="*">any</option>
+                                <option value=""></option>
+                                <option value="o">Mới</option>
+                                <option value="=">Chưa xử lý</option>
+                                <option value="!">Đang xử lý</option>
+                                <option value="ev">Kết thúc</option>
                             </select></td>
                         <td class="values"><span style="display: none;">
                             <select class="value" id="values_status_id_1" name="v[status_id][]" disabled="disabled">
+                                <option value=""></option>
                                 <option value="7">Open</option>
                                 <option value="2">In Progress</option>
                                 <option value="8">Translated</option>
@@ -66,172 +159,92 @@
                             </select>
                             <span class="toggle-multiselect icon-only icon-toggle-plus">&nbsp;</span></span></td>
                     </tr>
-                </table>
-                <%--<ul>
-                        <li>
-                            <button type="button" class="btn btn-primary" href="#" style="border-radius: 4px; transition-duration: .5s; text-decoration: none; padding: 10px 16px; border: 1px solid #e6e6e6;">
-                                Tất cả</button></li>
-                        <li><a href="#">Lĩnh vực 1</a></li>
-                        <li><a href="#">Lĩnh vực 2</a></li>
-                        <li><a href="#">Lĩnh vực 3</a></li>
-                        <li><a href="#">Lĩnh vực 4</a></li>
-                    </ul>--%>
-        </div>
-        <section class="col-md-12">
-            <%--  <ul class="list-group post-list">
-                    <li class="list-group-item"><a href="ThreadContent.aspx">Question 1</a>
-                        Về hình thức vay vốn....
-                    </li>
-                    <li class="list-group-item"><a href="ThreadContent.aspx">Question 2</a>
-                        Nếu như tôi muốn...
-                    </li>
-                    <li class="list-group-item"><a href="ThreadContent.aspx">Question 3</a></li>
-                    <li class="list-group-item"><a href="ThreadContent.aspx">Question 4</a></li>
-                    <li class="list-group-item"><a href="ThreadContent.aspx">Question 5</a></li>
-                </ul>--%>
-
-            <style>
-                table.list, .table-list {
-                    border: 1px solid #e4e4e4;
-                    width: 100%;
-                    margin-bottom: 4px;
-                    border-radius: 3px;
-                    border-spacing: 0;
-                    overflow: hidden;
-                }
-
-                table {
-                    display: table;
-                    border-collapse: separate;
-                    box-sizing: border-box;
-                    text-indent: initial;
-                    unicode-bidi: isolate;
-                    border-spacing: 2px;
-                    border-color: gray;
-                }
-
-                tr.issue {
-                    text-align: center;
-                    white-space: nowrap;
-                }
-
-                .hascontextmenu {
-                    cursor: context-menu;
-                }
-
-                table.list:not(.odd-even) tbody tr:nth-child(odd), .odd, #issue-changesets div.changeset:nth-child(odd) {
-                    background-color: #f6f7f8;
-                }
-
-                tr {
-                    display: table-row;
-                    vertical-align: inherit;
-                    unicode-bidi: isolate;
-                }
-
-                thead {
-                    display: table-header-group;
-                    vertical-align: middle;
-                    unicode-bidi: isolate;
-                    border-color: inherit;
-                }
-
-                table.list th, .table-list-header {
-                    background-color: #EEEEEE;
-                    padding: 4px;
-                    white-space: nowrap;
-                    font-weight: bold;
-                }
-
-                th {
-                    display: table-cell;
-                    vertical-align: inherit;
-                    font-weight: bold;
-                    text-align: center;
-                    unicode-bidi: isolate;
-                }
-
-                tr.issue td.subject, tr.issue td.parent-subject, tr.issue td.category, td.assigned_to, td.last_updated_by, tr.issue td.string, tr.issue td.text, tr.issue td.list, tr.issue td.relations, tr.issue td.parent {
-                    white-space: normal;
-                }
-
-                table.list td.name, table.list td.description, table.list td.subject, table.list td.parent-subject, table.list td.comments, table.list td.roles, table.list td.attachments, table.list td.text, table.list td.short_description {
-                    text-align: left;
-                }
-
-                table td {
-                    padding: 2px;
-                }
-
-                table.list td {
-                    text-align: center;
-                    vertical-align: middle;
-                    padding-right: 10px;
-                }
-            </style>
-            <table class="list issues odd-even sort-by-id sort-desc">
-                <thead>
+                    <tr class="filter" id="tr_priority_id">
+                        <td class="field">
+                            <input checked="checked" id="cb_priority_id" name="f[]" value="priority_id" type="checkbox"><label for="cb_priority_id"> Ưu tiên:</label></td>
+                        <td class="operator">
+                            <select id="operators_priority_id" name="op[priority_id]" style="">
+                                <option value=""></option>
+                                <option value="o">Thấp</option>
+                                <option value="=">Thường</option>
+                                <option value="!">Cao</option>
+                            </select></td>
+                        <td class="values"><span style="display: none;">
+                            <select class="value" id="values_priority_id_1" name="v[priority_id][]" disabled="disabled">
+                                <option value="7">Open</option>
+                                <option value="2">In Progress</option>
+                                <option value="8">Translated</option>
+                                <option value="29">Confirm OK</option>
+                            </select>
+                            <span class="toggle-multiselect icon-only icon-toggle-plus">&nbsp;</span></span></td>
+                    </tr>
                     <tr>
-                        <th class="id"><a title="Sort by &quot;#&quot;" class="sort desc icon icon-sorted-asc" href="/projects/nourin/issues?c%5B%5D=tracker&amp;c%5B%5D=status&amp;c%5B%5D=priority&amp;c%5B%5D=subject&amp;c%5B%5D=assigned_to&amp;c%5B%5D=start_date&amp;c%5B%5D=due_date&amp;f%5B%5D=status_id&amp;f%5B%5D=tracker_id&amp;f%5B%5D=&amp;group_by=&amp;op%5Bstatus_id%5D=o&amp;op%5Btracker_id%5D=%3D&amp;page=3&amp;per_page=25&amp;set_filter=1&amp;sort=id&amp;t%5B%5D=&amp;utf8=%E2%9C%93&amp;v%5Btracker_id%5D%5B%5D=2">#</a></th>
-                        <th class="tracker"><a title="Sort by &quot;Tracker&quot;" href="/projects/nourin/issues?c%5B%5D=tracker&amp;c%5B%5D=status&amp;c%5B%5D=priority&amp;c%5B%5D=subject&amp;c%5B%5D=assigned_to&amp;c%5B%5D=start_date&amp;c%5B%5D=due_date&amp;f%5B%5D=status_id&amp;f%5B%5D=tracker_id&amp;f%5B%5D=&amp;group_by=&amp;op%5Bstatus_id%5D=o&amp;op%5Btracker_id%5D=%3D&amp;page=3&amp;per_page=25&amp;set_filter=1&amp;sort=tracker%2Cid%3Adesc&amp;t%5B%5D=&amp;utf8=%E2%9C%93&amp;v%5Btracker_id%5D%5B%5D=2">Tracker</a></th>
-                        <th class="status"><a title="Sort by &quot;Status&quot;" href="/projects/nourin/issues?c%5B%5D=tracker&amp;c%5B%5D=status&amp;c%5B%5D=priority&amp;c%5B%5D=subject&amp;c%5B%5D=assigned_to&amp;c%5B%5D=start_date&amp;c%5B%5D=due_date&amp;f%5B%5D=status_id&amp;f%5B%5D=tracker_id&amp;f%5B%5D=&amp;group_by=&amp;op%5Bstatus_id%5D=o&amp;op%5Btracker_id%5D=%3D&amp;page=3&amp;per_page=25&amp;set_filter=1&amp;sort=status%2Cid%3Adesc&amp;t%5B%5D=&amp;utf8=%E2%9C%93&amp;v%5Btracker_id%5D%5B%5D=2">Status</a></th>
-                        <th class="priority"><a title="Sort by &quot;Priority&quot;" href="/projects/nourin/issues?c%5B%5D=tracker&amp;c%5B%5D=status&amp;c%5B%5D=priority&amp;c%5B%5D=subject&amp;c%5B%5D=assigned_to&amp;c%5B%5D=start_date&amp;c%5B%5D=due_date&amp;f%5B%5D=status_id&amp;f%5B%5D=tracker_id&amp;f%5B%5D=&amp;group_by=&amp;op%5Bstatus_id%5D=o&amp;op%5Btracker_id%5D=%3D&amp;page=3&amp;per_page=25&amp;set_filter=1&amp;sort=priority%3Adesc%2Cid%3Adesc&amp;t%5B%5D=&amp;utf8=%E2%9C%93&amp;v%5Btracker_id%5D%5B%5D=2">Priority</a></th>
-                        <th class="subject"><a title="Sort by &quot;Subject&quot;" href="/projects/nourin/issues?c%5B%5D=tracker&amp;c%5B%5D=status&amp;c%5B%5D=priority&amp;c%5B%5D=subject&amp;c%5B%5D=assigned_to&amp;c%5B%5D=start_date&amp;c%5B%5D=due_date&amp;f%5B%5D=status_id&amp;f%5B%5D=tracker_id&amp;f%5B%5D=&amp;group_by=&amp;op%5Bstatus_id%5D=o&amp;op%5Btracker_id%5D=%3D&amp;page=3&amp;per_page=25&amp;set_filter=1&amp;sort=subject%2Cid%3Adesc&amp;t%5B%5D=&amp;utf8=%E2%9C%93&amp;v%5Btracker_id%5D%5B%5D=2">Subject</a></th>
-                        <th class="assigned_to"><a title="Sort by &quot;Assignee&quot;" href="/projects/nourin/issues?c%5B%5D=tracker&amp;c%5B%5D=status&amp;c%5B%5D=priority&amp;c%5B%5D=subject&amp;c%5B%5D=assigned_to&amp;c%5B%5D=start_date&amp;c%5B%5D=due_date&amp;f%5B%5D=status_id&amp;f%5B%5D=tracker_id&amp;f%5B%5D=&amp;group_by=&amp;op%5Bstatus_id%5D=o&amp;op%5Btracker_id%5D=%3D&amp;page=3&amp;per_page=25&amp;set_filter=1&amp;sort=assigned_to%2Cid%3Adesc&amp;t%5B%5D=&amp;utf8=%E2%9C%93&amp;v%5Btracker_id%5D%5B%5D=2">Assignee</a></th>
-                        <th class="start_date"><a title="Sort by &quot;Start date&quot;" href="/projects/nourin/issues?c%5B%5D=tracker&amp;c%5B%5D=status&amp;c%5B%5D=priority&amp;c%5B%5D=subject&amp;c%5B%5D=assigned_to&amp;c%5B%5D=start_date&amp;c%5B%5D=due_date&amp;f%5B%5D=status_id&amp;f%5B%5D=tracker_id&amp;f%5B%5D=&amp;group_by=&amp;op%5Bstatus_id%5D=o&amp;op%5Btracker_id%5D=%3D&amp;page=3&amp;per_page=25&amp;set_filter=1&amp;sort=start_date%2Cid%3Adesc&amp;t%5B%5D=&amp;utf8=%E2%9C%93&amp;v%5Btracker_id%5D%5B%5D=2">Start date</a></th>
-                        <th class="due_date"><a title="Sort by &quot;Due date&quot;" href="/projects/nourin/issues?c%5B%5D=tracker&amp;c%5B%5D=status&amp;c%5B%5D=priority&amp;c%5B%5D=subject&amp;c%5B%5D=assigned_to&amp;c%5B%5D=start_date&amp;c%5B%5D=due_date&amp;f%5B%5D=status_id&amp;f%5B%5D=tracker_id&amp;f%5B%5D=&amp;group_by=&amp;op%5Bstatus_id%5D=o&amp;op%5Btracker_id%5D=%3D&amp;page=3&amp;per_page=25&amp;set_filter=1&amp;sort=due_date%2Cid%3Adesc&amp;t%5B%5D=&amp;utf8=%E2%9C%93&amp;v%5Btracker_id%5D%5B%5D=2">Due date</a></th>
+                        <td>
+                            <button class="btn btn-primary">Áp dụng</button>
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    <tr id="issue-2293" class="hascontextmenu odd issue tracker-2 status-9 priority-2 priority-default parent">
-                        <td class="id"><a href="/issues/2293">2293</a></td>
-                        <td class="tracker">Feature/Screen</td>
-                        <td class="status">Rejected</td>
-                        <td class="priority">Normal</td>
-                        <td class="subject"><a href="/issues/2293">[UT2]EMC_CLASS_B(４９．EMC_CLASS01_画面定義書（新区分反映）.xlsx)</a></td>
-                        <td class="assigned_to"><a class="user active" href="/users/59">Nguyen Khanh Hoa</a></td>
-                        <td class="start_date">01/05/2024</td>
-                        <td class="due_date">01/05/2024</td>
-                        <td class="buttons"><a title="Actions" class="icon-only icon-actions js-contextmenu" href="#">Actions</a></td>
-                    </tr>
-                    <tr id="issue-2281" class="hascontextmenu even issue tracker-2 status-9 priority-2 priority-default parent">
-                        <td class="id"><a href="/issues/2281">2281</a></td>
-                        <td class="tracker">Feature/Screen</td>
-                        <td class="status">Rejected</td>
-                        <td class="priority">Normal</td>
-                        <td class="subject"><a href="/issues/2281">[UT2]EMA_MASKING_B(４６．EMA_MASKING01_画面定義書（速報・確定結果秘匿） .xlsx)</a></td>
-                        <td class="assigned_to"><a class="user active" href="/users/27">Pham Van Phong</a></td>
-                        <td class="start_date"></td>
-                        <td class="due_date"></td>
-                        <td class="buttons"><a title="Actions" class="icon-only icon-actions js-contextmenu" href="#">Actions</a></td>
-                    </tr>
-                    <tr id="issue-2263" class="hascontextmenu odd issue tracker-2 status-9 priority-2 priority-default parent">
-                        <td class="id"><a href="/issues/2263">2263</a></td>
-                        <td class="tracker">Feature/Screen</td>
-                        <td class="status">Rejected</td>
-                        <td class="priority">Normal</td>
-                        <td class="subject"><a href="/issues/2263">[UT2]EAG_OUTPUT_C_B(５２．EAG_OUTPUT_C01_画面定義書（調査客体等別検討事項出力）.xlsx)</a></td>
-                        <td class="assigned_to"><a class="user active" href="/users/27">Pham Van Phong</a></td>
-                        <td class="start_date"></td>
-                        <td class="due_date"></td>
-                        <td class="buttons"><a title="Actions" class="icon-only icon-actions js-contextmenu" href="#">Actions</a></td>
-                    </tr>
-                    <tr id="issue-2251" class="hascontextmenu even issue tracker-2 status-9 priority-2 priority-default parent">
-                        <td class="id"><a href="/issues/2251">2251</a></td>
-                        <td class="tracker">Feature/Screen</td>
-                        <td class="status">Rejected</td>
-                        <td class="priority">Normal</td>
-                        <td class="subject"><a href="/issues/2251">[UT2]EAG_OUTPUT_P02_B(４３．EAG_OUTPUT_P02_画面定義書（地域別検討事項一覧）.xlsx)</a></td>
-                        <td class="assigned_to"><a class="user active" href="/users/34">Nguyen Ngoc Nam</a></td>
-                        <td class="start_date"></td>
-                        <td class="due_date"></td>
-                        <td class="buttons"><a title="Actions" class="icon-only icon-actions js-contextmenu" href="#">Actions</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+                </table>
+            </div>
+            <div class="col-12">
+                <table class="list issues odd-even sort-by-id sort-desc">
+                    <thead>
+                        <tr>
+                            <th class="id"><a title="Sort by &quot;#&quot;" class="sort desc icon icon-sorted-asc">#</a></th>
+                            <th class="tracker"><a title="Sort by &quot;Tracker&quot;">Lĩnh vực</a></th>
+                            <th class="status"><a title="Sort by &quot;Status&quot;">Trạng thái</a></th>
+                            <th class="priority"><a title="Sort by &quot;Priority&quot;">Ưu tiên</a></th>
+                            <th class="subject"><a title="Sort by &quot;Subject&quot;">Câu hỏi</a></th>
+                            <th class="assigned_to"><a title="Sort by &quot;Assignee&quot;">Người hỏi</a></th>
+                            <th class="start_date"><a title="Sort by &quot;Start date&quot;">Ngày bắt đầu</a></th>
+                            <th class="due_date"><a title="Sort by &quot;Due date&quot;">Ngày kết thúc</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="issue-2293" class="hascontextmenu odd issue tracker-2 status-9 priority-2 priority-default parent">
+                            <td class="id"><a href="ThreadContent.aspx">2293</a></td>
+                            <td class="tracker">Khởi nghiệp</td>
+                            <td class="status">Đang xử lý</td>
+                            <td class="priority">Cao</td>
+                            <td class="subject"><a href="ThreadContent.aspx">Câu hỏi 1</a></td>
+                            <td class="assigned_to"><a class="user active" href="/users/59">Nguyen A</a></td>
+                            <td class="start_date">01/05/2024</td>
+                            <td class="due_date">01/05/2024</td>
+                        </tr>
+                        <tr id="issue-2281" class="hascontextmenu even issue tracker-2 status-9 priority-2 priority-default parent">
+                            <td class="id"><a href="#">2281</a></td>
+                            <td class="tracker">Khởi nghiệp</td>
+                            <td class="status">Chưa xử lý</td>
+                            <td class="priority">Thưởng</td>
+                            <td class="subject"><a href="#">Câu hỏi 2</a></td>
+                            <td class="assigned_to"><a class="user active" href="/users/27">Pham B</a></td>
+                            <td class="start_date"></td>
+                            <td class="due_date"></td>
+                        </tr>
+                        <tr id="issue-2263" class="hascontextmenu odd issue tracker-2 status-9 priority-2 priority-default parent">
+                            <td class="id"><a href="#">2263</a></td>
+                            <td class="tracker">Khởi nghiệp</td>
+                            <td class="status">Chưa xử lý</td>
+                            <td class="priority">Thưởng</td>
+                            <td class="subject"><a href="#">Câu hỏi 3</a></td>
+                            <td class="assigned_to"><a class="user active" href="/users/27">Pham B</a></td>
+                            <td class="start_date"></td>
+                            <td class="due_date"></td>
+                        </tr>
+                        <tr id="issue-2251" class="hascontextmenu even issue tracker-2 status-9 priority-2 priority-default parent">
+                            <td class="id"><a href="#">2251</a></td>
+                            <td class="tracker">Khởi nghiệp</td>
+                            <td class="status">Chưa xử lý</td>
+                            <td class="priority">Thưởng</td>
+                            <td class="subject"><a href="#">Câu hỏi 4</a></td>
+                            <td class="assigned_to"><a class="user active" href="/users/34">Nguyen C</a></td>
+                            <td class="start_date"></td>
+                            <td class="due_date"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <%-- <div class="box filedroplistner">
+            <%-- <div class="box filedroplistner">
         <fieldset class="tabular"><legend>Change properties</legend>
         <div id="all_attributes">
         
@@ -552,8 +565,9 @@ var wikiToolbar = new jsToolBar(document.getElementById('issue_notes')); wikiToo
         </div>
       </fieldset>
     </div> --%>
+        </div>
     </div>
     <script>
-        
-    </script>
+
+</script>
 </asp:Content>
