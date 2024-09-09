@@ -12,7 +12,7 @@
 
     </asp:ContentPlaceHolder>
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/Site.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />
     <style>
         .dropdown-menu .sub-menu {
             display: none;
@@ -116,8 +116,10 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--%>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/jquery-3.7.0.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.dropdown').hover(function () {

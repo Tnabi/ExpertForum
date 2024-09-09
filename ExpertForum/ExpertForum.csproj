@@ -100,8 +100,35 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Content\style.css" />
+    <Content Include="Images\testimonial-1.jpg" />
+    <Content Include="Images\testimonial-2.jpg" />
+    <Content Include="Images\user.jpg" />
     <Content Include="Images\user.png" />
+    <Content Include="Scripts\admin_dashboard.js" />
+    <Content Include="Scripts\chart\chart.min.js" />
+    <Content Include="Scripts\easing\easing.js" />
+    <Content Include="Scripts\easing\easing.min.js" />
     <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="Scripts\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="Scripts\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="Scripts\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="Scripts\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="Scripts\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="Scripts\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="Scripts\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="Scripts\owlcarousel\owl.carousel.js" />
+    <Content Include="Scripts\owlcarousel\owl.carousel.min.js" />
+    <Content Include="Scripts\tempusdominus\css\tempusdominus-bootstrap-4.css" />
+    <Content Include="Scripts\tempusdominus\css\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="Scripts\tempusdominus\js\moment-timezone.min.js" />
+    <Content Include="Scripts\tempusdominus\js\moment.min.js" />
+    <Content Include="Scripts\tempusdominus\js\tempusdominus-bootstrap-4.js" />
+    <Content Include="Scripts\tempusdominus\js\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="Scripts\waypoints\links.php" />
+    <Content Include="Scripts\waypoints\waypoints.min.js" />
+    <Content Include="Views\AdminHome.aspx" />
     <Content Include="Views\ExpertManagement.aspx" />
     <Content Include="Views\QuestionAdd.aspx" />
     <Content Include="Views\QuestionEstimate.aspx" />
@@ -205,12 +232,28 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Utils\Common.cs" />
+    <Compile Include="Utils\DB.cs" />
+    <Compile Include="Views\AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\ExpertManagement.aspx.cs">
       <DependentUpon>ExpertManagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\ExpertManagement.aspx.designer.cs">
       <DependentUpon>ExpertManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Master\NonNav.Master.cs">
+      <DependentUpon>NonNav.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Master\NonNav.Master.designer.cs">
+      <DependentUpon>NonNav.Master</DependentUpon>
     </Compile>
     <Compile Include="Views\QuestionAdd.aspx.cs">
       <DependentUpon>QuestionAdd.aspx</DependentUpon>
@@ -352,6 +395,8 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
+    <Content Include="Scripts\owlcarousel\LICENSE" />
+    <Content Include="Views\Master\NonNav.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

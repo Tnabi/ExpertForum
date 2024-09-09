@@ -13,13 +13,14 @@
                     <h2>Đăng nhập</h2>
                 </div>
                 <div style="margin-top: 40px; width: 250px">
-                    <input name="txt_name" type="text" id="txt_name" placeholder="Tài khoản đăng nhập" class="form-control">
-                    <input name="txt_pws" type="password" id="txt_pws" placeholder="Mật khẩu" class="form-control">
+                    <asp:Label id="lblMessage" runat="server"></asp:Label>
+                    <asp:TextBox name="txt_name" type="text" id="txtUsername" placeholder="Tài khoản đăng nhập" class="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox name="txt_pws" type="password" id="txtPassword" placeholder="Mật khẩu" class="form-control" runat="server"></asp:TextBox>
                     <div>
                         <span id="l_sai" style="color: Red; font-weight: normal;"></span>
                     </div>
                     <div style="margin-top: 10px" align="center">
-                        <input type="submit" name="bt_login" value="Đăng nhập" id="bt_login" class="btmenu" style="width: 100%;">
+                        <asp:Button name="bt_login" id="bt_login" class="btmenu" style="width: 100%;" runat="server" OnClick="btnLogin_Click" Text="Đăng nhập"></asp:Button>
                     </div>
                 </div>
                 <hr />
