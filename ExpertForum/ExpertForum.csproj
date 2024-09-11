@@ -130,6 +130,7 @@
     <Content Include="Scripts\waypoints\waypoints.min.js" />
     <Content Include="Views\AdminHome.aspx" />
     <Content Include="Views\ExpertManagement.aspx" />
+    <Content Include="Views\LoginPage.aspx" />
     <Content Include="Views\QuestionAdd.aspx" />
     <Content Include="Views\QuestionEstimate.aspx" />
     <Content Include="Views\SpecialtyManagement.aspx" />
@@ -247,6 +248,13 @@
     </Compile>
     <Compile Include="Views\ExpertManagement.aspx.designer.cs">
       <DependentUpon>ExpertManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Master\NonNav.Master.cs">
       <DependentUpon>NonNav.Master</DependentUpon>

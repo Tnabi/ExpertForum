@@ -3,41 +3,40 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
-        <div class="row">
-            <div id="col1" class="col-md-5" style="background-color: #f0f0f0;" align="center">
-                <div style="margin-top: 30px">
-                    <img src="../Images/cfrc.png" style="width: 50%">
-                </div>
-                <div style="margin-top: 30px">
-                    <h2>Đăng nhập</h2>
-                </div>
-                <div style="margin-top: 40px; width: 250px">
-                    <asp:Label id="lblMessage" runat="server"></asp:Label>
-                    <asp:TextBox name="txt_name" type="text" id="txtUsername" placeholder="Tài khoản đăng nhập" class="form-control" runat="server"></asp:TextBox>
-                    <asp:TextBox name="txt_pws" type="password" id="txtPassword" placeholder="Mật khẩu" class="form-control" runat="server"></asp:TextBox>
-                    <div>
-                        <span id="l_sai" style="color: Red; font-weight: normal;"></span>
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+        <!-- Sign In Start -->
+        <div class="container-fluid">
+            <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                    <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <a href="index.html" class="">
+                                <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
+                            </a>
+                            <h3>Sign In</h3>
+                        </div>
+                        <asp:Label id="lblMessage" runat="server"></asp:Label>
+                        <div class="form-floating mb-3">
+                            <asp:TextBox runat="server" type="text" class="form-control" ID="floatingInput" placeholder="Tên tài khoản"></asp:TextBox>
+                            <label for="floatingInput">Tài khoản đăng nhập</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <asp:TextBox runat="server" type="password" class="form-control" ID="floatingPassword" placeholder="Mật khẩu"></asp:TextBox>
+                            <label for="floatingPassword">Mật khẩu</label>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+                            <a href="">Forgot Password</a>
+                        </div>
+                        <asp:Button runat="server" type="button" class="btn btn-primary py-3 w-100 mb-4" OnClick="btnLogin_Click" Text="Đăng nhập"></asp:Button>
+                        <p class="text-center mb-0">Don't have an Account? <a href="">Sign Up</a></p>
                     </div>
-                    <div style="margin-top: 10px" align="center">
-                        <asp:Button name="bt_login" id="bt_login" class="btmenu" style="width: 100%;" runat="server" OnClick="btnLogin_Click" Text="Đăng nhập"></asp:Button>
-                    </div>
-                </div>
-                <hr />
-                <div>
-                    <a href="UserRegister.aspx">
-                        <p><i>Đăng ký tài khoản cho người dùng<img src="../Images/Double-right.png" width="15"/></i></p>
-                    </a>
-                </div>
-                <br />
-                <div>
-                    <a href="HomePage.aspx">
-                        <p>
-                            <i><img src="../Images/Double-left.png" width="15"/>Quay lại trang chủ</i>
-                        </p>
-                    </a>
                 </div>
             </div>
         </div>
+        <!-- Sign In End -->
     </div>
 </asp:Content>

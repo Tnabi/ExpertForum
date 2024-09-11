@@ -17,9 +17,7 @@ namespace ExpertForum.Views.Master
                 return;
             }
             else
-            {
-                //    MasterPage mainPage = (this.Master as MasterPage);
-                //    ((Label)mainPage.FindControl("lblAdminName1")).Text = ((Label)mainPage.FindControl("lblAdminName2")).Text = Session["userName"].ToString();
+            {                
                 lblAdminName1.Text = lblAdminName2.Text = Session["userName"].ToString();
             }
         }

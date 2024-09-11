@@ -1,5 +1,4 @@
 ﻿using ExpertForum.Utils;
-using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -9,9 +8,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ExpertForum
+namespace ExpertForum.Views
 {
-    public partial class login : System.Web.UI.Page
+    public partial class LoginPage : System.Web.UI.Page
     {
         int roleId;
         string userName;
@@ -21,7 +20,6 @@ namespace ExpertForum
         {
 
         }
-
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["cnnStr"].ConnectionString;
@@ -32,6 +30,7 @@ namespace ExpertForum
 
                 userName = floatingInput.Text;
                 password = floatingPassword.Text;
+                floatingPassword.Text = "";
 
                 if (String.IsNullOrEmpty(userName) || String.IsNullOrEmpty(password))
                 {
@@ -68,6 +67,18 @@ namespace ExpertForum
                     connection.Close();
                 }
             }
+        }
+
+        protected void rememberMeFunc(string userName, string Password, string userId, string roleId)
+        {
+            var userCookie = new HttpCookie("LoggedUser")
+            {
+                Expires = DateTime.Now.AddDays(30),
+                SameSite = SameSiteMode.None,
+                HttpOnly = true,
+                Secure = true
+            }; 
+            Response.Cookies.Add(userCookie);
         }
     }
 }

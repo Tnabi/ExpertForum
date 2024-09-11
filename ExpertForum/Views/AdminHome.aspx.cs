@@ -12,15 +12,7 @@ namespace ExpertForum.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Session["userId"] as String))
-            {
-                Response.Redirect("Login.aspx");
-                return;
-            }
-            else
-            {
-                //lblAdminName1.Text = lblAdminName2.Text = Session["userName"].ToString();
-            }
+            
         }
     }
 }
