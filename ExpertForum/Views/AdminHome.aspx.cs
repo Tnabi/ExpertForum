@@ -12,7 +12,15 @@ namespace ExpertForum.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Request.Cookies["FisrtLoginCookie"] != null)
+            {
+                string cookieVal = Request.Cookies["FisrtLoginCookie"].Value;
+
+                if (String.Equals(cookieVal, "True"))
+                {
+                    firstLogin.Value = "True";
+                }
+            }
         }
     }
 }

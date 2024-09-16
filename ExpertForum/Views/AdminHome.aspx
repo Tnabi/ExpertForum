@@ -48,8 +48,7 @@
                 </div>
             </div>
             <!-- Sale & Revenue End -->
-
-
+            <asp:HiddenField runat="server" ID="firstLogin" Value="0" />
             <!-- Sales Chart Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -299,8 +298,41 @@
         </div>
         <!-- Content End -->
 
-
+        <%-- Modal mới --%>
+        <div class="modal fade" id="changePwModal" tabindex="-1" role="dialog" aria-labelledby="changePwModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="col-sm-12">
+                    <div class="bg-light rounded h-100 p-4">
+                        <h6 class="mb-4">Basic Form</h6>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">
+                                    We'll never share your email with anyone else.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
+        <script src="../Scripts/jquery-3.7.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                if ($("#ContentPlaceHolder1_firstLogin").val() == "True") {
+                    $("#changePwModal").modal('show');
+                }
+            });
+        </script>
+    </div>    
 </asp:Content>
