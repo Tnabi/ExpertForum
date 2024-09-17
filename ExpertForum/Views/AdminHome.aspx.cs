@@ -22,5 +22,7 @@ namespace ExpertForum.Views
                 }
             }
         }
+
+        protected void btnChange_Click(object sender, EventArgs e) { }
     }
 }

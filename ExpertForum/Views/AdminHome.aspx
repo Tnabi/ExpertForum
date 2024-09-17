@@ -303,23 +303,19 @@
             <div class="modal-dialog" role="document">
                 <div class="col-sm-12">
                     <div class="bg-light rounded h-100 p-4">
-                        <h6 class="mb-4">Basic Form</h6>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">
-                                    We'll never share your email with anyone else.
-                                </div>
+                        <h3 class="mb-9">Thay đổi mật khẩu</h3>
+                        <div class="mb-3">
+                            <label for="passwordChange" class="form-label">Mật khẩu mới</label>
+                            <asp:TextBox runat="server" type="password" class="form-control" id="passwordChange" aria-describedby="passwordHelp" />
+                            <div id="passwordHelp" class="form-text">
+                                <i>Do tài khoản đăng nhập lần đầu nên cần đổi mật khẩu</i>
                             </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
-                            </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordConfirm" class="form-label">Nhập lại mật khẩu</label>
+                            <asp:TextBox runat="server" type="password" class="form-control" id="passwordConfirm" />
+                        </div>
+                        <asp:Button runat="server" type="button" class="btn btn-primary py-3 w-100 mb-4" OnClick="btnChange_Click" Text="Đổi mật khẩu"></asp:Button>
                     </div>
                 </div>
             </div>
@@ -330,9 +326,14 @@
         <script>
             $(document).ready(function () {
                 if ($("#ContentPlaceHolder1_firstLogin").val() == "True") {
+                    $('#changePwModal').modal(
+                        {
+                            backdrop: 'static',
+                            keyboard: true
+                        })
                     $("#changePwModal").modal('show');
                 }
             });
         </script>
-    </div>    
+    </div>
 </asp:Content>
