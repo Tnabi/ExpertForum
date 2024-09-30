@@ -55,10 +55,7 @@
                                 <label for="floatingPassword">Mật khẩu</label>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mb-4">
-                                <div class="form-check">
-                                    <asp:CheckBox runat="server" type="checkbox" class="form-check-input" id="rememberMe"></asp:CheckBox>
-                                    <label class="form-check-label" for="rememberMe">Ghi nhớ tôi</label>
-                                </div>
+                                    <asp:CheckBox runat="server" type="checkbox" class="check-input" id="rememberMe" Text="Ghi nhớ tôi"></asp:CheckBox>
                                 <a href="">Forgot Password</a>
                             </div>
                             <asp:Button runat="server" type="button" class="btn btn-primary py-3 w-100 mb-4" OnClick="btnLogin_Click" Text="Đăng nhập"></asp:Button>

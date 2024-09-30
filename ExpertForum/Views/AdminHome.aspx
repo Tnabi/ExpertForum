@@ -13,8 +13,8 @@
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Tổng lượt truy cập theo ngày</p>
+                                <h6 class="mb-0"><asp:Label runat="server" ID="TodayVisitors"></asp:Label></h6>
                             </div>
                         </div>
                     </div>
@@ -22,8 +22,8 @@
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Tổng lượt truy cập theo tuần</p>
+                                <h6 class="mb-0"><asp:Label runat="server" ID="WeeklyVisitors"></asp:Label></h6>
                             </div>
                         </div>
                     </div>
@@ -31,8 +31,8 @@
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Today Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Tổng lượt truy cập theo tháng</p>
+                                <h6 class="mb-0"><asp:Label runat="server" ID="MonthlyVisitors"></asp:Label></h6>
                             </div>
                         </div>
                     </div>
@@ -40,8 +40,8 @@
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-pie fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Total Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Tổng lượt truy cập</p>
+                                <h6 class="mb-0"><asp:Label runat="server" ID="AllVisitors"></asp:Label></h6>
                             </div>
                         </div>
                     </div>
@@ -298,23 +298,30 @@
         </div>
         <!-- Content End -->
 
-        <%-- Modal mới --%>
-        <div class="modal fade" id="changePwModal" tabindex="-1" role="dialog" aria-labelledby="changePwModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="col-sm-12">
-                    <div class="bg-light rounded h-100 p-4">
-                        <h3 class="mb-9">Thay đổi mật khẩu</h3>
+        <!-- Modal Change Password -->
+        <div class="modal fade" id="changePwModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="changePwModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                         <h3 class="mb-9">Thay đổi mật khẩu</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <asp:Label ID="lblMessage" runat="server" class="text-danger"></asp:Label>
+                        </div>
                         <div class="mb-3">
                             <label for="passwordChange" class="form-label">Mật khẩu mới</label>
-                            <asp:TextBox runat="server" type="password" class="form-control" id="passwordChange" aria-describedby="passwordHelp" />
+                            <asp:TextBox runat="server" type="password" class="form-control" ID="passwordChange" aria-describedby="passwordHelp" />
                             <div id="passwordHelp" class="form-text">
                                 <i>Do tài khoản đăng nhập lần đầu nên cần đổi mật khẩu</i>
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="passwordConfirm" class="form-label">Nhập lại mật khẩu</label>
-                            <asp:TextBox runat="server" type="password" class="form-control" id="passwordConfirm" />
+                            <asp:TextBox runat="server" type="password" class="form-control" ID="passwordConfirm" />
                         </div>
+                    </div>
+                    <div class="modal-footer">
                         <asp:Button runat="server" type="button" class="btn btn-primary py-3 w-100 mb-4" OnClick="btnChange_Click" Text="Đổi mật khẩu"></asp:Button>
                     </div>
                 </div>
@@ -326,11 +333,6 @@
         <script>
             $(document).ready(function () {
                 if ($("#ContentPlaceHolder1_firstLogin").val() == "True") {
-                    $('#changePwModal').modal(
-                        {
-                            backdrop: 'static',
-                            keyboard: true
-                        })
                     $("#changePwModal").modal('show');
                 }
             });
