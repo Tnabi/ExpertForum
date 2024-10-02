@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 using System.Web.UI;
@@ -26,22 +27,31 @@ namespace ExpertForum.Views
                 {
                     firstLogin.Value = "True";
                 }
-            }
-            else
-            {
+                int todayVisitor = Convert.ToInt32(Application["Visitors"]);
+
+                TodayVisitors.Text = todayVisitor.ToString();
+
                 string connectionString = ConfigurationManager.ConnectionStrings["cnnStr"].ConnectionString;
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     StringBuilder userInfoQuery = new StringBuilder();
-                    userInfoQuery.Append("SELECT SUM(visitor_count) as count_all ");
+                    userInfoQuery.Append("SELECT ");
+                    userInfoQuery.Append("    SUM(visitor_count) AS COUNT_ALL, ");
+                    userInfoQuery.Append("    SUM(CASE WHEN DATEPART(MONTH, date) = DATEPART(MONTH, GETDATE()) THEN visitor_count ELSE 0 END) AS MONTHLY_VISITORS, ");
+                    userInfoQuery.Append("    SUM(CASE WHEN DATEPART(WEEK, date) = DATEPART(WEEK, GETDATE()) THEN visitor_count ELSE 0 END) AS WEEKLY_VISITORS ");
                     userInfoQuery.Append("FROM dbo.[visitors]; ");
 
                     SqlCommand command = new SqlCommand(userInfoQuery.ToString(), connection);
 
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
-
+                    while (reader.Read())
+                    {
+                        WeeklyVisitors.Text = (reader.GetInt32(reader.GetOrdinal("WEEKLY_VISITORS")) + todayVisitor ).ToString();
+                        MonthlyVisitors.Text = (reader.GetInt32(reader.GetOrdinal("MONTHLY_VISITORS")) + todayVisitor ).ToString();
+                        AllVisitors.Text = (reader.GetInt32(reader.GetOrdinal("COUNT_ALL")) + todayVisitor ).ToString();
+                    }
 
                     connection.Close();
                 }

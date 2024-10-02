@@ -14,7 +14,7 @@ namespace ExpertForum
 {
     public class Global : HttpApplication
     {
-        NewDayDetector detector;
+        private static NewDayDetector detector;
 
         void Application_Start(object sender, EventArgs e)
         {

@@ -68,7 +68,7 @@ namespace ExpertForum.Views
                             {
                                 Session["userId"] = userId = reader["user_id"].ToString();
                                 Session["userName"] = userName;
-                                Session["roleId"] = roleId = reader.GetInt32(1);
+                                Session["roleId"] = roleId = reader.GetInt32(reader.GetOrdinal("role_id"));
                                 firstLogin = (bool)reader["first_login"];
                             }
 
