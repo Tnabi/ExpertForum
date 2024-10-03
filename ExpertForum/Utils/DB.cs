@@ -9,11 +9,11 @@ namespace ExpertForum.Utils
     public class DB : DbContext
     {
         //public DbSet<Product> Products { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("YourConnectionString");
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("YourConnectionString");
 
-        }
+        //}
 
     }
 }
